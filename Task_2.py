@@ -16,7 +16,7 @@ from random import randint
 messages = [', your move:', ', go ahead!', ', forward!',
  ', go on!', ", it's your turn:", ', come on!']
 
-def take_numb(name: str, replicas: str, general_amount: int) -> int:
+def take_numb(name: str, replicas: str) -> int:
     while True:
         numb = int(input(f'{name}{random.choice(replicas)}\n'))
         if numb in range(1, 29):
@@ -56,7 +56,7 @@ else:
 
 while total_sweets > 0:
     winner = current_player
-    move = take_numb(current_player, messages, total_sweets)
+    move = take_numb(current_player, messages)
     total_sweets -= move     
     print(f'The rest of sweets: {total_sweets}')   
     current_player = player_2 if current_player == player_1 else player_1  
@@ -79,7 +79,7 @@ else:
     print(f'Bot begins to play')    
 while total_sweets > 0:
     if choice == 0:
-        move = take_numb(player, messages, total_sweets)
+        move = take_numb(player, messages)
         total_sweets -= move
         choice = 1         
         print(f'The rest of sweets: {total_sweets}')
