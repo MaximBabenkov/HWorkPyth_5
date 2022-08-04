@@ -90,8 +90,7 @@ while total_sweets > 0:
         move = bot(total_sweets)    
         print(f'Bot moves:\n', move)           
         total_sweets -= move
-        choice = 0
-        current_player = player           
+        choice = 0                 
         print(f'The rest of sweets: {total_sweets}')
         if total_sweets == 0:
             print(f'No sweets left on the table!\n Bot gets all the sweets')      
